@@ -6,10 +6,16 @@ using System.Collections.Generic;
 
 namespace InventoryNoAuth.Models
 {
-    public partial class MCpositioncode
+    public partial class MCpositioncodePart
     {
+        
+        public string Id { get; set; }
         public string Cpositioncode { get; set; }
         public string Cposition { get; set; }
-        public int? Cnt { get; set; }
+        public string Cinvcode { get; set; }
+        public string Part { get; set; }
+        public string Rank { get; set; }
+        public string RankFinal { get; set; }
+        public decimal Iqty { get; set; }
     }
 }

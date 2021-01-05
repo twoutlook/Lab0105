@@ -20,7 +20,8 @@ namespace InventoryNoAuth.Data
         }
 
         public virtual DbSet<BasePart> BasePart { get; set; }
-        public virtual DbSet<MCpoisitioncode> MCpoisitioncode { get; set; }
+        public virtual DbSet<MCpositioncode> MCpositioncode { get; set; }
+        public virtual DbSet<MCpositioncodePart> MCpositioncodePart { get; set; }
         public virtual DbSet<StockCurrent> StockCurrent { get; set; }
         public virtual DbSet<StockCurrentAdjust> StockCurrentAdjust { get; set; }
         public virtual DbSet<StockCurrentAdjustD> StockCurrentAdjustD { get; set; }
@@ -264,10 +265,9 @@ namespace InventoryNoAuth.Data
                     .HasColumnName("UNIT");
             });
 
-            modelBuilder.Entity<MCpoisitioncode>(entity =>
+            modelBuilder.Entity<MCpositioncode>(entity =>
             {
-                //entity.HasNoKey();
-                entity.HasKey(x => x.Cposition);
+                entity.HasNoKey();
 
                 entity.ToView("M_CPOISITIONCODE");
 
@@ -281,6 +281,53 @@ namespace InventoryNoAuth.Data
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnName("cpositioncode");
+            });
+
+            modelBuilder.Entity<MCpositioncodePart>(entity =>
+            {
+                entity.HasKey(x=>x.Id);
+
+                entity.ToView("M_CPOSITIONCODE_PART");
+
+                entity.Property(e => e.Cinvcode)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("cinvcode");
+
+                entity.Property(e => e.Cposition)
+                    .HasMaxLength(100)
+                    .HasColumnName("cposition");
+
+                entity.Property(e => e.Cpositioncode)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnName("cpositioncode");
+
+                entity.Property(e => e.Id)
+                    .IsRequired()
+                    .HasMaxLength(36)
+                    .IsUnicode(false)
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Iqty)
+                    .HasColumnType("decimal(18, 6)")
+                    .HasColumnName("iqty");
+
+                entity.Property(e => e.Part)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("PART");
+
+                entity.Property(e => e.Rank)
+                    .HasMaxLength(2)
+                    .IsUnicode(false)
+                    .HasColumnName("RANK");
+
+                entity.Property(e => e.RankFinal)
+                    .HasMaxLength(2)
+                    .IsUnicode(false)
+                    .HasColumnName("RANK_FINAL");
             });
 
             modelBuilder.Entity<StockCurrent>(entity =>

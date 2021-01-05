@@ -23,8 +23,8 @@ namespace InventoryNoAuth
         public string DateSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
-        //    public IList<MCpoisitioncode> MCpoisitioncode { get;set; }
-        public PaginatedList<MCpoisitioncode> MCpoisitioncode { get; set; }
+        //    public IList<MCpositioncode> MCpositioncode { get;set; }
+        public PaginatedList<MCpositioncode> MCpositioncode { get; set; }
         public async Task OnGetAsync(string sortOrder,
        string currentFilter, string searchString, int? pageIndex)
         {
@@ -42,15 +42,23 @@ namespace InventoryNoAuth
             }
 
             CurrentFilter = searchString;
-            //  MCpoisitioncode = await _context.MCpoisitioncode.ToListAsync();
+            //  MCpositioncode = await _context.MCpositioncode.ToListAsync();
 
-            IQueryable<MCpoisitioncode> studentsIQ = from s in _context.MCpoisitioncode
+            IQueryable<MCpositioncode> studentsIQ = from s in _context.MCpositioncode
                                                      select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentsIQ = studentsIQ.Where(s => s.Cpositioncode.Contains(searchString)
+                                       || s.Cposition.Contains(searchString));
+            }
+
+            studentsIQ = studentsIQ.OrderBy(s => s.Cpositioncode);
 
             //IQueryable<Student> studentsIQ = from s in _context.Students
             //                                 select s;
             int pageSize = 10;
-            MCpoisitioncode = await PaginatedList<MCpoisitioncode>.CreateAsync(
+            MCpositioncode = await PaginatedList<MCpositioncode>.CreateAsync(
                 studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
     }

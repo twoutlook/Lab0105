@@ -2,9 +2,17 @@
 
 @model InventoryNoAuth.MCpositioncodeModel
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            儲位編碼或名稱模糊查詢:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">全部顯示</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -18,14 +26,14 @@
                 料號數
             </th>
             <th>
-                數量和
+                查看
             </th>
 
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.MCpoisitioncode)
+        @foreach (var item in Model.MCpositioncode)
         {
             <tr>
                 <td>
@@ -39,7 +47,7 @@
                 </td>
                 <td>
                     @*    <a asp-page="./Edit" asp-route-id="@item.Cposition">Edit</a> |*@
-                    <a asp-page="./Details" asp-route-id="@item.Cposition">Details</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Cposition">查看</a>
                     @*  <a asp-page="./Delete" asp-route-id="@item.Cposition">Delete</a>*@
                 </td>
             </tr>
@@ -48,21 +56,22 @@
 </table>
 
 @{
-    var prevDisabled = !Model.MCpoisitioncode.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.MCpoisitioncode.HasNextPage ? "disabled" : "";
+    var prevDisabled = !Model.MCpositioncode.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.MCpositioncode.HasNextPage ? "disabled" : "";
 }
 
 <a asp-page="./Index"
    asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.MCpoisitioncode.PageIndex - 1)"
+   asp-route-pageIndex="@(Model.MCpositioncode.PageIndex - 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-primary @prevDisabled">
-    Previous
+    Previous上一頁
 </a>
+@Model.MCpositioncode.PageIndex / @Model.MCpositioncode.TotalPages
 <a asp-page="./Index"
    asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.MCpoisitioncode.PageIndex + 1)"
+   asp-route-pageIndex="@(Model.MCpositioncode.PageIndex + 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-primary @nextDisabled">
-    Next
+    Next下一頁
 </a>

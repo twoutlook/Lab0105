@@ -35,6 +35,10 @@
       {
          "Name": "[dbo].[M_CPOISITIONCODE]",
          "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[M_CPOSITIONCODE_PART]",
+         "ObjectType": 3
       }
    ],
    "UseDatabaseNames": false,
