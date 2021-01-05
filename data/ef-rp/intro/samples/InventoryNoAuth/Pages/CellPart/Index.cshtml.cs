@@ -21,11 +21,10 @@ namespace InventoryNoAuth.Pages.PositioncodePart
 
         public IList<MCpositioncodePart> MCpositioncodePart { get;set; }
 
-        public async Task OnGetAsync(string cpositioncode)
+        public async Task OnGetAsync(string cell)
         {
-      //      Console.WriteLine("what is cpositioncode" + cpositioncode);
-            System.Diagnostics.Debug.WriteLine("what is cpositioncode" + cpositioncode);
-            MCpositioncodePart = await _context.MCpositioncodePart.Where(x=>x.Cpositioncode == cpositioncode).OrderBy(x=>x.Cinvcode).ToListAsync();
+            //System.Diagnostics.Debug.WriteLine("what is cpositioncode" + cpositioncode);
+            MCpositioncodePart = await _context.MCpositioncodePart.Where(x=>x.Cpositioncode == cell).OrderBy(x=>x.Cinvcode).ToListAsync();
         }
     }
 }

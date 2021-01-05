@@ -54,7 +54,7 @@
                 <td>
                     @*    <a asp-page="./Edit" asp-route-id="@item.Cposition">Edit</a> |*@
                     @*   <a asp-page="./PositioncodePart" asp-route-id="@item.Cposition">查看</a>*@
-                    <a href="./PositioncodePart?cpositioncode=@item.Cpositioncode">查看</a>
+                    <a class="btn btn-info" href="./CellPart?cell=@item.Cpositioncode">查看</a>
 
                     @*  <a asp-page="./Delete" asp-route-id="@item.Cposition">Delete</a>*@
                 </td>
