@@ -31,6 +31,10 @@
       {
          "Name": "[dbo].[STOCK_CURRENT_SN]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[M_CPOISITIONCODE]",
+         "ObjectType": 3
       }
    ],
    "UseDatabaseNames": false,

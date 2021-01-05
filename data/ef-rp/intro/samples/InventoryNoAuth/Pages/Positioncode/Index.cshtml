@@ -1,0 +1,68 @@
+﻿@page
+
+@model InventoryNoAuth.MCpositioncodeModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                儲位編碼
+            </th>
+            <th>
+                儲位名稱
+            </th>
+            <th>
+                料號數
+            </th>
+            <th>
+                數量和
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MCpoisitioncode)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpositioncode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cposition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnt)
+                </td>
+                <td>
+                    @*    <a asp-page="./Edit" asp-route-id="@item.Cposition">Edit</a> |*@
+                    <a asp-page="./Details" asp-route-id="@item.Cposition">Details</a> |
+                    @*  <a asp-page="./Delete" asp-route-id="@item.Cposition">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.MCpoisitioncode.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.MCpoisitioncode.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.MCpoisitioncode.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.MCpoisitioncode.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>

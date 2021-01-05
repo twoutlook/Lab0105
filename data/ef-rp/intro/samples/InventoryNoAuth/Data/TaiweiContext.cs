@@ -20,6 +20,7 @@ namespace InventoryNoAuth.Data
         }
 
         public virtual DbSet<BasePart> BasePart { get; set; }
+        public virtual DbSet<MCpoisitioncode> MCpoisitioncode { get; set; }
         public virtual DbSet<StockCurrent> StockCurrent { get; set; }
         public virtual DbSet<StockCurrentAdjust> StockCurrentAdjust { get; set; }
         public virtual DbSet<StockCurrentAdjustD> StockCurrentAdjustD { get; set; }
@@ -261,6 +262,25 @@ namespace InventoryNoAuth.Data
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("UNIT");
+            });
+
+            modelBuilder.Entity<MCpoisitioncode>(entity =>
+            {
+                //entity.HasNoKey();
+                entity.HasKey(x => x.Cposition);
+
+                entity.ToView("M_CPOISITIONCODE");
+
+                entity.Property(e => e.Cnt).HasColumnName("cnt");
+
+                entity.Property(e => e.Cposition)
+                    .HasMaxLength(100)
+                    .HasColumnName("cposition");
+
+                entity.Property(e => e.Cpositioncode)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnName("cpositioncode");
             });
 
             modelBuilder.Entity<StockCurrent>(entity =>
