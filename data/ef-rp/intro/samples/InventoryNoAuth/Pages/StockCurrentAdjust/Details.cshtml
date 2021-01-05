@@ -1,0 +1,67 @@
+﻿@page
+@model InventoryNoAuth.DetailsModel
+
+<div>
+    <h4>StockCurrentAdjust</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Cticketcode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Cticketcode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Reason)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Cstatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Cstatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Createowner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Createowner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Createtime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Createtime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Reviewuser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Reviewuser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Reviewtime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Reviewtime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Lastupdateuser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Lastupdateuser)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StockCurrentAdjust.Lastupdatetime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StockCurrentAdjust.Lastupdatetime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.StockCurrentAdjust.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,62 @@
+﻿@page
+@model InventoryNoAuth.Pages.StockCurrent.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+      
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Cwarehouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Cwarehousecode)
+            </th>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Cposition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Cinvcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Cinvname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrent[0].Iqty)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StockCurrent) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cwarehouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpositioncode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cposition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinvcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinvname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iqty)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

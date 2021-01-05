@@ -1,0 +1,68 @@
+﻿@page
+@model InventoryNoAuth.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Cticketcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Cstatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Createowner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Createtime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Reviewuser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCurrentAdjust[0].Reviewtime)
+            </th>
+      
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StockCurrentAdjust) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cticketcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cstatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Createowner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Createtime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reviewuser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reviewtime)
+            </td>
+    
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

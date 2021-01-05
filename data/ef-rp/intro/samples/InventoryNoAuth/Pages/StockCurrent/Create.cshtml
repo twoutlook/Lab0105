@@ -1,0 +1,128 @@
+﻿@page
+@model InventoryNoAuth.Pages.StockCurrent.CreateModel
+
+<h4>StockCurrent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Id" class="control-label"></label>
+                <input asp-for="StockCurrent.Id" class="form-control" />
+                <span asp-validation-for="StockCurrent.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cwarehouse" class="control-label"></label>
+                <input asp-for="StockCurrent.Cwarehouse" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cwarehouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cwarehousecode" class="control-label"></label>
+                <input asp-for="StockCurrent.Cwarehousecode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cwarehousecode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cpositioncode" class="control-label"></label>
+                <input asp-for="StockCurrent.Cpositioncode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cpositioncode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cposition" class="control-label"></label>
+                <input asp-for="StockCurrent.Cposition" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cposition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cinvcode" class="control-label"></label>
+                <input asp-for="StockCurrent.Cinvcode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cinvcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cinvname" class="control-label"></label>
+                <input asp-for="StockCurrent.Cinvname" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cinvname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Iqty" class="control-label"></label>
+                <input asp-for="StockCurrent.Iqty" class="form-control" />
+                <span asp-validation-for="StockCurrent.Iqty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cunits" class="control-label"></label>
+                <input asp-for="StockCurrent.Cunits" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cunits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cdatecode" class="control-label"></label>
+                <input asp-for="StockCurrent.Cdatecode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cdatecode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cbarcode" class="control-label"></label>
+                <input asp-for="StockCurrent.Cbarcode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cbarcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Ioccupyqty" class="control-label"></label>
+                <input asp-for="StockCurrent.Ioccupyqty" class="form-control" />
+                <span asp-validation-for="StockCurrent.Ioccupyqty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cmemo" class="control-label"></label>
+                <input asp-for="StockCurrent.Cmemo" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cmemo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cdefine1" class="control-label"></label>
+                <input asp-for="StockCurrent.Cdefine1" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cdefine1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Cdefine2" class="control-label"></label>
+                <input asp-for="StockCurrent.Cdefine2" class="form-control" />
+                <span asp-validation-for="StockCurrent.Cdefine2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Ddefine3" class="control-label"></label>
+                <input asp-for="StockCurrent.Ddefine3" class="form-control" />
+                <span asp-validation-for="StockCurrent.Ddefine3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Ddefine4" class="control-label"></label>
+                <input asp-for="StockCurrent.Ddefine4" class="form-control" />
+                <span asp-validation-for="StockCurrent.Ddefine4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Idefine5" class="control-label"></label>
+                <input asp-for="StockCurrent.Idefine5" class="form-control" />
+                <span asp-validation-for="StockCurrent.Idefine5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Iplanin" class="control-label"></label>
+                <input asp-for="StockCurrent.Iplanin" class="form-control" />
+                <span asp-validation-for="StockCurrent.Iplanin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Iplanout" class="control-label"></label>
+                <input asp-for="StockCurrent.Iplanout" class="form-control" />
+                <span asp-validation-for="StockCurrent.Iplanout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrent.Palletcode" class="control-label"></label>
+                <input asp-for="StockCurrent.Palletcode" class="form-control" />
+                <span asp-validation-for="StockCurrent.Palletcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

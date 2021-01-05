@@ -1,0 +1,73 @@
+﻿@page
+@model InventoryNoAuth.CreateModel
+
+<h4>StockCurrentAdjust</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Id" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Id" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Cticketcode" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Cticketcode" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Cticketcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Reason" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Reason" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Cstatus" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Cstatus" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Cstatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Createowner" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Createowner" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Createowner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Createtime" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Createtime" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Createtime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Reviewuser" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Reviewuser" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Reviewuser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Reviewtime" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Reviewtime" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Reviewtime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Lastupdateuser" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Lastupdateuser" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Lastupdateuser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockCurrentAdjust.Lastupdatetime" class="control-label"></label>
+                <input asp-for="StockCurrentAdjust.Lastupdatetime" class="form-control" />
+                <span asp-validation-for="StockCurrentAdjust.Lastupdatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
