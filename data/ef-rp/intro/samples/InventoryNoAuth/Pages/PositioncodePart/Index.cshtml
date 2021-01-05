@@ -2,31 +2,27 @@
 @model InventoryNoAuth.Pages.PositioncodePart.IndexModel
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a href="./Positioncode">返回</a>
+
+
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Cpositioncode)
+               儲位編碼
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Cposition)
+                儲位名稱
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Cinvcode)
+                料號
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Part)
+                批/序號(RANK)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Rank)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].RankFinal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MCpositioncodePart[0].Iqty)
+                數量
             </th>
             <th></th>
         </tr>
@@ -41,13 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Cposition)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cinvcode)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Part)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rank)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RankFinal)
@@ -55,11 +45,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Iqty)
             </td>
-            <td>
+            @*<td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

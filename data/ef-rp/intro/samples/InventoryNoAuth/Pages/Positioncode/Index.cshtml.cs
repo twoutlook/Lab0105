@@ -53,7 +53,24 @@ namespace InventoryNoAuth
                                        || s.Cposition.Contains(searchString));
             }
 
-            studentsIQ = studentsIQ.OrderBy(s => s.Cpositioncode);
+            //studentsIQ = studentsIQ.OrderBy(s => s.Cpositioncode);
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.Cpositioncode);
+                    break;
+                case "Date":
+                    studentsIQ = studentsIQ.OrderBy(s => s.Cposition);
+                    break;
+                case "date_desc":
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.Cposition);
+                    break;
+                default:
+                    studentsIQ = studentsIQ.OrderBy(s => s.Cpositioncode);
+                    break;
+            }
+
+
 
             //IQueryable<Student> studentsIQ = from s in _context.Students
             //                                 select s;

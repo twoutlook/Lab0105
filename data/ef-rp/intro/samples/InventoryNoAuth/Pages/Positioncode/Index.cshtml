@@ -17,10 +17,16 @@
     <thead>
         <tr>
             <th>
-                儲位編碼
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
+                    儲位編碼
+                </a>
             </th>
             <th>
-                儲位名稱
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
+                    儲位名稱
+                </a>
             </th>
             <th>
                 料號數
@@ -47,7 +53,9 @@
                 </td>
                 <td>
                     @*    <a asp-page="./Edit" asp-route-id="@item.Cposition">Edit</a> |*@
-                    <a asp-page="./Details" asp-route-id="@item.Cposition">查看</a>
+                    @*   <a asp-page="./PositioncodePart" asp-route-id="@item.Cposition">查看</a>*@
+                    <a href="./PositioncodePart?cpositioncode=@item.Cpositioncode">查看</a>
+
                     @*  <a asp-page="./Delete" asp-route-id="@item.Cposition">Delete</a>*@
                 </td>
             </tr>
@@ -65,7 +73,7 @@
    asp-route-pageIndex="@(Model.MCpositioncode.PageIndex - 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-primary @prevDisabled">
-    Previous上一頁
+    上一頁
 </a>
 @Model.MCpositioncode.PageIndex / @Model.MCpositioncode.TotalPages
 <a asp-page="./Index"
@@ -73,5 +81,5 @@
    asp-route-pageIndex="@(Model.MCpositioncode.PageIndex + 1)"
    asp-route-currentFilter="@Model.CurrentFilter"
    class="btn btn-primary @nextDisabled">
-    Next下一頁
+    下一頁
 </a>
