@@ -13,6 +13,7 @@ namespace InventoryNoAuth.Models
         public string Cpositioncode { get; set; }
         public string Cposition { get; set; }
         public string Cinvcode { get; set; }
+        public string Cinvname { get; set; }
         public string Part { get; set; }
         public string Rank { get; set; }
         public string RankFinal { get; set; }

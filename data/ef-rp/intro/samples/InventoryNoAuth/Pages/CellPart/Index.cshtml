@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th>
-               儲位編碼
+                儲位編碼
             </th>
             <th>
                 儲位名稱
@@ -20,6 +20,9 @@
             </th>
             <th>
                 批/序號(RANK)
+            </th>
+            <th>
+                品名
             </th>
             <th>
                 數量
@@ -43,13 +46,16 @@
                 @Html.DisplayFor(modelItem => item.RankFinal)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Cinvname)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Iqty)
             </td>
             @*<td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>*@
+            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+        </td>*@
         </tr>
 }
     </tbody>
