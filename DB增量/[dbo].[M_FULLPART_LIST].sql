@@ -7,11 +7,11 @@ GO
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'M_FULLPART_LIST'
 GO
 
-/****** Object:  View [dbo].[M_FULLPART_LIST]    Script Date: 2021/1/6 8:54:31 ******/
+/****** Object:  View [dbo].[M_FULLPART_LIST]    Script Date: 2021/1/6 9:23:00 ******/
 DROP VIEW [dbo].[M_FULLPART_LIST]
 GO
 
-/****** Object:  View [dbo].[M_FULLPART_LIST]    Script Date: 2021/1/6 8:54:31 ******/
+/****** Object:  View [dbo].[M_FULLPART_LIST]    Script Date: 2021/1/6 9:23:00 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -20,9 +20,9 @@ GO
 
 CREATE VIEW [dbo].[M_FULLPART_LIST]
 AS
-SELECT cinvcode AS FULLPART, PART, RANK, RANK_FINAL, COUNT(DISTINCT cpositioncode) AS CELL_CNT
+SELECT cinvcode AS FULLPART, PART, RANK, RANK_FINAL, COUNT(DISTINCT cpositioncode) AS CELL_CNT, cinvname AS PARTNAME, SUM(iqty) AS QTY
 FROM     dbo.M_CELL_PART_RAW
-GROUP BY cinvcode, PART, RANK, RANK_FINAL
+GROUP BY cinvcode, PART, RANK, RANK_FINAL, cinvname, iqty
 GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -104,7 +104,7 @@ Begin DesignProperties =
                Right = 258
             End
             DisplayFlags = 280
-            TopColumn = 0
+            TopColumn = 5
          End
       End
    End

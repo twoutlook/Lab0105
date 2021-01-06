@@ -413,7 +413,7 @@ namespace InventoryNoAuth.Data
 
             modelBuilder.Entity<MFullpartList>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(x=>x.Fullpart);
 
                 entity.ToView("M_FULLPART_LIST");
 
@@ -429,6 +429,16 @@ namespace InventoryNoAuth.Data
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("PART");
+
+                entity.Property(e => e.Partname)
+                    .IsRequired()
+                    .HasMaxLength(300)
+                    .IsUnicode(false)
+                    .HasColumnName("PARTNAME");
+
+                entity.Property(e => e.Qty)
+                    .HasColumnType("decimal(38, 6)")
+                    .HasColumnName("QTY");
 
                 entity.Property(e => e.Rank)
                     .HasMaxLength(2)

@@ -5,18 +5,38 @@
 }
 
 <div>
- @*   <h1 class="page-title">庫存管理</h1>*@
-    <ul>
-        <li><a class="btn btn-info" href="/ByCell">按儲位查詢</a>
-            <ul> <li>列出料號和數量</li></ul>
-        </li>
-       
-        <li>
-            <a  class="btn btn-info"  href="/ByPart">
-                按料號查詢</a>
-                <ul> <li>列出儲位和數量</li></ul>
-</li>
-        <li><a  class="btn btn-primary"  href="/StockCurrentAdjust">庫存調整</a></li>
-    </ul>
+    @*   <h1 class="page-title">庫存管理</h1>*@
+    <table>
+        <tr>
+            <td>
+                <a class="btn btn-info" href="/ByCell">按儲位查詢</a>
+            </td>
+            <td>
+                列出料號和數量
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                <a class="btn btn-info" href="/FullpartList">
+                    按完整料號查詢
+                </a>
+            </td>
+            <td>
+                列出儲位和數量
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a class="btn btn-primary" href="/StockCurrentAdjust">庫存調整</a>
+            </td>
+            <td>
+                TODO 或是直接使用外掛的 LINK
+            </td>
+
+        </tr>
+
+    </table>
 </div>
 

@@ -13,5 +13,7 @@ namespace InventoryNoAuth.Models
         public string Rank { get; set; }
         public string RankFinal { get; set; }
         public int? CellCnt { get; set; }
+        public string Partname { get; set; }
+        public decimal? Qty { get; set; }
     }
 }

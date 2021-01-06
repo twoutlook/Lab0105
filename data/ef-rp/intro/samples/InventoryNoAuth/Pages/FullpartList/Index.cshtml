@@ -1,0 +1,68 @@
+﻿@page
+@model InventoryNoAuth.Pages.FullpartList.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                完整料號
+            </th>
+            <th>
+                料號
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.MFullpartList[0].Rank)
+        </th>*@
+            <th>
+                批/序號(RANK)
+            </th>
+            <th>
+                品名
+            </th>
+            <th>
+                數量和
+            </th>
+
+
+            <th>
+                儲位數
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MFullpartList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fullpart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Part)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.RankFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CellCnt)
+            </td>
+            <td>
+        
+                <a asp-page="./Details" asp-route-id="@item.Fullpart">詳細</a> 
+         
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
