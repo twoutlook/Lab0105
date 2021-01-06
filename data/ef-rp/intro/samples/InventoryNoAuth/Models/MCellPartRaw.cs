@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace InventoryNoAuth.Models
 {
-    public partial class MCpositioncodePart
+    public partial class MCellPartRaw
     {
         public string Id { get; set; }
         public string Cpositioncode { get; set; }

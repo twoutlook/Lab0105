@@ -33,11 +33,27 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[M_CELL_LIST]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[M_CELL_PART_RAW]",
+         "ObjectType": 3
+      },
+      {
          "Name": "[dbo].[M_CPOISITIONCODE]",
          "ObjectType": 3
       },
       {
          "Name": "[dbo].[M_CPOSITIONCODE_PART]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[M_FULLPART_LIST]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[M_PART_LIST]",
          "ObjectType": 3
       }
    ],
